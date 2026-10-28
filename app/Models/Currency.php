@@ -16,11 +16,17 @@ class Currency extends Model
         'exchange_rate' => 'decimal:6',
     ];
 
+    /**
+     * Obtiene los productos asociados a la divisa.
+     */
     public function products(): HasMany
     {
         return $this->hasMany(Product::class);
     }
 
+    /**
+     * Obtiene los precios de producto asociados a la divisa.
+     */
     public function productPrices(): HasMany
     {
         return $this->hasMany(ProductPrice::class);

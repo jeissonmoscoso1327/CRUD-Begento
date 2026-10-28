@@ -26,11 +26,17 @@ class Product extends Model
         'manufacturing_cost' => 'decimal:2',
     ];
 
+    /**
+     * Obtiene la divisa principal del producto.
+     */
     public function currency(): BelongsTo
     {
         return $this->belongsTo(Currency::class);
     }
 
+    /**
+     * Obtiene el historial o listado de precios del producto.
+     */
     public function prices(): HasMany
     {
         return $this->hasMany(ProductPrice::class);

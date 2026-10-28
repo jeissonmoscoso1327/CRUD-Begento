@@ -16,11 +16,17 @@ class ProductPrice extends Model
         'price' => 'decimal:2',
     ];
 
+    /**
+     * Obtiene el producto asociado al precio.
+     */
     public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);
     }
 
+    /**
+     * Obtiene la divisa asociada al precio del producto.
+     */
     public function currency(): BelongsTo
     {
         return $this->belongsTo(Currency::class);
